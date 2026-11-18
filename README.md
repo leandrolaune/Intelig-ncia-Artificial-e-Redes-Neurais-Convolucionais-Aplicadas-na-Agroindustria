@@ -18,7 +18,7 @@
 
 Este repositório contém a implementação de um modelo de Visão Computacional baseado na arquitetura **ConvNeXt-Tiny** utilizando **Transfer Learning** em PyTorch para a identificação e classificação automatizada de fitopatologias em plantações de arroz (*Oryza sativa*).
 
-O diagnóstico precoce e preciso de doenças foliares é essencial para mitigar perdas na produtividade agrícola e otimizar o uso de defensivos. Neste trabalho, aplicamos técnicas modernas de aprendizado profundo, balanceamento de classes e regularização para classificar imagens de folhas de arroz em **6 categorias distintas**, atingindo **99,50% de acurácia no conjunto de validação**.
+O diagnóstico precoce e preciso de doenças foliares é essencial para mitigar perdas na produtividade agrícola e otimizar o uso de defensivos. Neste trabalho, aplicamos técnicas modernas de aprendizado profundo, balanceamento de classes e regularização para classificar imagens de folhas de arroz em **6 categorias distintas**, atingindo **99,64% de acurácia no conjunto de teste**.
 
 ---
 
@@ -73,12 +73,14 @@ O pipeline foi construído sob a estratégia de **Feature Extraction / Fine-Tuni
 
 ## 📈 Resultados Obtidos
 
-O treinamento foi executado em GPU NVIDIA T4 (Google Colab) e convergiu de forma estável, sendo interrompido automaticamente pelo **Early Stopping na 32ª época**:
+O modelo final foi avaliado no **conjunto de teste** (dados totalmente inéditos), obtendo um desempenho de altíssima precisão:
 
-| Métrica | Treino (Época 32) | Validação (Época 32) | Melhor Validação (Época 27) |
-| :--- | :---: | :---: | :---: |
-| **Loss (Perda)** | `0.0626` | `0.0242` | `0.0220` |
-| **Acurácia** | `97.86%` | `99.50%` | `99.50%` |
+| Métrica | Valor |
+| :--- | :---: |
+| **Acurácia Geral** | `99.64%` (`0.9964`) |
+| **Precisão (Macro)** | `99.66%` (`0.9966`) |
+| **Recall (Macro)** | `99.65%` (`0.9965`) |
+| **F1-Score (Macro)** | `99.65%` (`0.9965`) |
 
 ---
 
@@ -88,6 +90,12 @@ O treinamento foi executado em GPU NVIDIA T4 (Google Colab) e convergiu de forma
 Clique no botão **Open in Colab** no topo deste README para abrir o notebook diretamente no navegador, ativar o ambiente de execução com GPU (`Ambiente de execução > Alterar o tipo de ambiente de execução > T4 GPU`) e executar as células sequencialmente.
 
 ### 2. Execução Local
+
+Clone este repositório e instale as dependências necessárias:
+
+```bash
+git clone [https://github.com/leandrolaune/Classifica-o-de-Folhas-de-Milho-com-CNN.git](https://github.com/leandrolaune/Classifica-o-de-Folhas-de-Milho-com-CNN.git)
+cd Classifica-o-de-Folhas-de-Milho-com-CNN
 
 Clone este repositório e instale as dependências necessárias:
 
